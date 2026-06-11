@@ -9,7 +9,7 @@ A simple and practical planner app for managing your daily tasks and schedule.
 ### 📱 Android APK
 
 👉 Download latest version:
-https://github.com/amirhossein-ahmadi-ah/Today-Planner/releases/download/v1.0.0/Today.Planner.apk
+https://github.com/amirhossein-ahmadi-ah/Today-Planner/releases/latest/download/Today.Planner.apk
 
 ---
 
@@ -28,10 +28,10 @@ https://github.com/amirhossein-ahmadi-ah/Today-Planner/releases/download/v1.0.0/
 You can download the source code here:
 
 - ZIP:
-https://github.com/amirhossein-ahmadi-ah/Today-Planner/archive/refs/tags/v1.0.0.zip
+https://github.com/amirhossein-ahmadi-ah/Today-Planner/archive/refs/heads/main.zip
 
 - TAR.GZ:
-https://github.com/amirhossein-ahmadi-ah/Today-Planner/archive/refs/tags/v1.0.0.tar.gz
+https://github.com/amirhossein-ahmadi-ah/Today-Planner/archive/refs/heads/main.tar.gz
 
 ---
 
