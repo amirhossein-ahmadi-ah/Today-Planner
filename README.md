@@ -1,21 +1,62 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# 📅 Today Planner
 
-# Run and deploy your AI Studio app
+A simple and practical planner app for managing your daily tasks and schedule.
 
-This contains everything you need to run your app locally.
+---
 
-View your app in AI Studio: https://ai.studio/apps/c91e9060-3dd7-456a-ade0-96e22b844930
+## 📥 Download
 
-## Run Locally
+### 📱 Android APK
 
-**Prerequisites:**  [Android Studio](https://developer.android.com/studio)
+👉 Download latest version:
+https://github.com/amirhossein-ahmadi-ah/Today-Planner/releases/latest/download/Today.Planner.apk
 
+---
 
-1. Open Android Studio
-2. Select **Open** and choose the directory containing this project
-3. Allow Android Studio to fix any incompatibilities as it imports the project.
-4. Create a file named `.env` in the project directory and set `GEMINI_API_KEY` in that file to your Gemini API key (see `.env.example` for an example)
-5. Remove this line from the app's `build.gradle.kts` file: `signingConfig = signingConfigs.getByName("debugConfig")`
-6. Run the app on an emulator or physical device
+## 🚀 Installation
+
+1. Download the APK from the link above.
+2. Open the file on your Android device.
+3. If needed, enable **Unknown Sources**.
+4. Install the app.
+5. Launch **Today Planner** and start using it.
+
+---
+
+## 📦 Source Code
+
+You can download the source code here:
+
+- ZIP:
+https://github.com/amirhossein-ahmadi-ah/Today-Planner/archive/refs/heads/main.zip
+
+- TAR.GZ:
+https://github.com/amirhossein-ahmadi-ah/Today-Planner/archive/refs/heads/main.tar.gz
+
+---
+
+## 📱 Requirements
+
+- Android 5.0+
+- Permission to install APK files
+
+---
+
+## ✨ Features
+
+- 📝 Task management  
+- 📅 Daily planning  
+- ⏰ Schedule organization  
+- 🎯 Simple and clean UI  
+
+---
+
+## 🔄 Updates
+
+For updates, just download the latest APK from the Releases section and install it again.
+
+---
+
+## 📄 License
+
+This project is available under the repository license.
