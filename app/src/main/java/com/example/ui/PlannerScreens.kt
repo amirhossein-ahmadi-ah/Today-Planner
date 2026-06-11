@@ -1566,6 +1566,19 @@ fun CalendarTabScreen(viewModel: PlannerViewModel) {
     val context = LocalContext.current
     val tasks by viewModel.tasks.collectAsState()
 
+    val realTodayCal = remember { Calendar.getInstance() }
+    val realTodayGregYear = remember(realTodayCal) { realTodayCal.get(Calendar.YEAR) }
+    val realTodayGregMonth = remember(realTodayCal) { realTodayCal.get(Calendar.MONTH) + 1 }
+    val realTodayGregDay = remember(realTodayCal) { realTodayCal.get(Calendar.DAY_OF_MONTH) }
+
+    val todayCellDay = remember(viewModel.activeCalendarViewType, realTodayGregYear, realTodayGregMonth, realTodayGregDay) {
+        when (viewModel.activeCalendarViewType) {
+            0 -> CalendarHelper.gregorianToJalali(realTodayGregYear, realTodayGregMonth, realTodayGregDay)[2]
+            1 -> CalendarHelper.gregorianToHijri(realTodayGregYear, realTodayGregMonth, realTodayGregDay)[2]
+            else -> realTodayGregDay
+        }
+    }
+
     // Determine calendar headings
     val activeCalLabel = when (viewModel.activeCalendarViewType) {
         0 -> AppStrings.get("jalali")
@@ -1732,28 +1745,59 @@ fun CalendarTabScreen(viewModel: PlannerViewModel) {
                                     calendarMonth == viewModel.selectedCalendarMonth &&
                                     calendarYear == viewModel.selectedCalendarYear
 
+                            val isTodayCell = calendarYear == realTodayGregYear &&
+                                    calendarMonth == realTodayGregMonth &&
+                                    cellDay == todayCellDay
+
+                            val cellBgColor = when {
+                                isSelectedDay && isTodayCell -> MaterialTheme.colorScheme.primary
+                                isSelectedDay -> MaterialTheme.colorScheme.secondaryContainer
+                                isTodayCell -> MaterialTheme.colorScheme.primary.copy(alpha = 0.12f)
+                                else -> Color.Transparent
+                            }
+
+                            val cellTextColor = when {
+                                isSelectedDay && isTodayCell -> MaterialTheme.colorScheme.onPrimary
+                                isSelectedDay -> MaterialTheme.colorScheme.onSecondaryContainer
+                                isTodayCell -> MaterialTheme.colorScheme.primary
+                                else -> MaterialTheme.colorScheme.onSurface
+                            }
+
+                            val cellFontWeight = when {
+                                isSelectedDay || isTodayCell -> FontWeight.Bold
+                                else -> FontWeight.Normal
+                            }
+
+                            var cellModifier = Modifier
+                                .weight(1f)
+                                .aspectRatio(1f)
+                                .padding(2.dp)
+                                .clip(RoundedCornerShape(8.dp))
+                                .background(cellBgColor)
+
+                            if (isTodayCell && !isSelectedDay) {
+                                cellModifier = cellModifier.border(
+                                    width = 1.5.dp,
+                                    color = MaterialTheme.colorScheme.primary,
+                                    shape = RoundedCornerShape(8.dp)
+                                )
+                            }
+
+                            cellModifier = cellModifier.clickable {
+                                viewModel.selectedCalendarDay = cellDay
+                                viewModel.selectedCalendarMonth = calendarMonth
+                                viewModel.selectedCalendarYear = calendarYear
+                            }
+
                             Box(
                                 contentAlignment = Alignment.Center,
-                                modifier = Modifier
-                                    .weight(1f)
-                                    .aspectRatio(1f)
-                                    .padding(2.dp)
-                                    .clip(RoundedCornerShape(8.dp))
-                                    .background(
-                                        if (isSelectedDay) MaterialTheme.colorScheme.primaryContainer
-                                        else Color.Transparent
-                                    )
-                                    .clickable {
-                                        viewModel.selectedCalendarDay = cellDay
-                                        viewModel.selectedCalendarMonth = calendarMonth
-                                        viewModel.selectedCalendarYear = calendarYear
-                                    }
+                                modifier = cellModifier
                             ) {
                                 Text(
                                     text = cellDay.toString(),
                                     fontSize = 12.sp,
-                                    fontWeight = if (isSelectedDay) FontWeight.Bold else FontWeight.Normal,
-                                    color = if (isSelectedDay) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface
+                                    fontWeight = cellFontWeight,
+                                    color = cellTextColor
                                 )
                             }
                         }
@@ -1770,7 +1814,7 @@ fun CalendarTabScreen(viewModel: PlannerViewModel) {
         // Actions listing scheduled on selected date
         val selectedDateFormatted = remember(viewModel.selectedCalendarYear, viewModel.selectedCalendarMonth, viewModel.selectedCalendarDay) {
             val jal = CalendarHelper.gregorianToJalali(viewModel.selectedCalendarYear, viewModel.selectedCalendarMonth, viewModel.selectedCalendarDay)
-            "${jal[0]}/${"%02d".format(jal[1])}/${"%02d".format(jal[2])} (${AppStrings.get("jalali")})"
+            "${jal[0]}/${"%02d".format(jal[1])}/${"%02d".format(jal[2])}"
         }
 
         var showAddTaskForDayDialog by remember { mutableStateOf(false) }
