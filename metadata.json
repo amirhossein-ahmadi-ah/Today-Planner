@@ -1,0 +1,6 @@
+{
+  "name": "Today Planner",
+  "description": "A bilingual, modern Persian and English planner with multi-calendar (Jalali, Hijri, Gregorian), analytics, streaking, notifications, and cloud sync",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
