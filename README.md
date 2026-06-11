@@ -4,48 +4,59 @@ A simple and practical planner app for managing your daily tasks and schedule.
 
 ---
 
-## 🚀 Installation
+## 📥 Download
 
-1. Open this repository.
-2. Click on **Code** and download the file **`Today Planner.apk`**.
-3. Transfer the APK to your Android device if needed.
-4. Open the APK file and install the application.
-5. Launch **Today Planner** and start organizing your day.
+### 📱 Android APK
 
-> **Note:** You may need to enable installation from unknown sources in your Android settings.
+👉 Download latest version:
+https://github.com/amirhossein-ahmadi-ah/Today-Planner/releases/download/v1.0.0/Today.Planner.apk
 
 ---
 
-## 📥 Download
+## 🚀 Installation
 
-Download and install:
+1. Download the APK from the link above.
+2. Open the file on your Android device.
+3. If needed, enable **Unknown Sources**.
+4. Install the app.
+5. Launch **Today Planner** and start using it.
 
-📦 **`Today Planner.apk`**
+---
+
+## 📦 Source Code
+
+You can download the source code here:
+
+- ZIP:
+https://github.com/amirhossein-ahmadi-ah/Today-Planner/archive/refs/tags/v1.0.0.zip
+
+- TAR.GZ:
+https://github.com/amirhossein-ahmadi-ah/Today-Planner/archive/refs/tags/v1.0.0.tar.gz
 
 ---
 
 ## 📱 Requirements
 
-- Android device
+- Android 5.0+
 - Permission to install APK files
 
 ---
 
 ## ✨ Features
 
-- 📝 Task management
-- 📅 Daily planning
-- ⏰ Schedule organization
-- 🎯 Simple and user-friendly interface
+- 📝 Task management  
+- 📅 Daily planning  
+- ⏰ Schedule organization  
+- 🎯 Simple and clean UI  
 
 ---
 
 ## 🔄 Updates
 
-To update the application, download the latest version of **`Today Planner.apk`** from this repository and install it over the existing version.
+For updates, just download the latest APK from the Releases section and install it again.
 
 ---
 
 ## 📄 License
 
-This project is available under the repository's license.
+This project is available under the repository license.
