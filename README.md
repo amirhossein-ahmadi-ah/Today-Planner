@@ -9,7 +9,7 @@ A simple and practical planner app for managing your daily tasks and schedule.
 ### 📱 Android APK
 
 👉 Download latest version:
-https://github.com/amirhossein-ahmadi-ah/Today-Planner/releases/latest/download/Today.Planner.apk
+https://github.com/amirhossein-ahmadi-ah/Today-Planner/releases/latest/download/Today.Planner.1.apk
 
 ---
 
